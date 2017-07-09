@@ -1,0 +1,12 @@
+Array
+(
+    [file] => Array
+        (
+            [name] => blob
+            [type] => image/png
+            [tmp_name] => D:\OpenServer\userdata\temp\phpED66.tmp
+            [error] => 0
+            [size] => 79965
+        )
+
+)

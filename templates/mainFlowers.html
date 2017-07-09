@@ -1,0 +1,86 @@
+<div class="mainBox">
+    <div class="mainRow">
+        <div id="photoOrder">
+            <div class="holst" ng-drop="true" ng-drop-success="onDropComplete($data,$event,this)">
+                 <div class="rose {{checkSelect(flower)}}" ng-repeat="flower in orderFlovers" ng-drag="true" ng-drag-data='flower' title="{{flower.name}}" 
+                      ng-drop="true" ng-drop-success="onDropRose($data,$event,flower)"
+                      ng-click='selectRose(flower)'
+                      style='top:{{flower.y}}px;left:{{flower.x}}px'>
+                    <div class="rose__buton" color="{{flower.color}}"></div>
+                    <div ng-show='checkSticker(flower)' class="sticker" style="background-image: url(/source/img/stickers/{{flower.sticker}}.png);"></div>
+                    <div class="rose__stem"></div>
+                </div>
+                <div ng-show="orderText != ''" class='hols-text'>{{orderText}}</div>
+            </div>
+            <div class="curOrder">
+                В заказе: {{textOrder()}} <span class="itog">Итог: <b>{{getPrice()}}</b></span>
+            </div>
+        </div>
+        <div class="listRoses">
+            <div class="rose" ng-repeat="flower in flowers" ng-drag="true" ng-drag-data='flower' title="{{flower.name}}">
+                <div class="rose__buton" color="{{flower.color}}"></div>
+                <div class="rose__stem"></div>
+            </div>
+        </div>
+    </div>
+    <div class="filterBox">
+        <div class="propersMain">
+            <div ng-show="checkCurrent()" class="rose-propers filter-box" >
+                <div class="title"> Цвет розы </div>
+                <div class="rose-propers-colors">
+                    <label ng-repeat="flower in flowers">
+                        <input type="radio" name="color" value="{{flower.color}}" ng-model='current.color'>
+                        {{flower.title}}
+                    </label>
+                </div>
+                <div class="line flexLine flexSpace" ng-show="current.sticker">
+                    <div class="title"> Стикер </div>
+                    <span class='coolbutton' ng-click='deleteSticker()'> Удалить </span>
+                </div>
+                <div class="line flexLine flexCenter">
+                    <span class='coolbutton' ng-click='deleteRose()'> Убрать розу из букета </span>
+                </div>
+            </div>
+            <div class="bouquet-set filter-box">
+                <div class="line">
+                    <div class="title"> Записка </div>
+                    <input type="text" placeholder="Текст записки" ng-model='orderText'/>
+                </div>
+                <div class="line">
+                    <label>
+                        <input type="checkbox" ng-model="orderSet.spare"/>
+                        Опрыскать цветы
+                    </label>
+                </div>
+                <div class='line' ng-show="current != false">
+                    <span class='coolbutton' ng-click='clearSelect()'> Очистить выделение </span>
+                </div>
+            </div>
+            <div class="order-box">
+                <span class="order__but" ng-click="createOrder()"> Оформить заказ </span>
+            </div>
+        </div>
+        <div class="decoration__boxex">
+            <div class="decoration__controll">
+                <div class="decoration__controll-item check" ng-click="setTab" rel="stickers">
+                    Стикеры
+                </div>
+                <div class="decoration__controll-item" rel="butterfly">
+                    Бабочки
+                </div>
+            </div>
+            <div>
+                <div class="decoration__box check">
+                    <div class="decoration__box-list">
+                        <div class="sticker" ng-repeat="sticker in stickers" myid="{{sticker.id}}" title="{{sticker.name}}" ng-drag="true" ng-drag-data='sticker'
+                             style="background-image: url(/source/img/stickers/{{sticker.id}}.png);"></div>
+                    </div>
+                </div>
+                <div class="decoration__box">
+                    Тут список выбранных бабочек
+                </div>
+                <!-- ng-switch-when="butterfly" -->
+            </div>
+        </div>
+    </div>
+</div>

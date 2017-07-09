@@ -1,0 +1,180 @@
+html{
+    position: relative;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.flexLine{
+    display: flex;
+    align-items: center;
+} 
+.flexWrap{
+    flex-wrap: wrap;
+}
+.flexSpace{
+    justify-content: space-around;
+}
+.flexCenter{
+    justify-content: center;
+}
+.mainBox{
+    max-width: 800px;
+    margin: 20px auto 0;
+    display: flex;
+}
+.filterBox{
+   width:220px;
+   margin-left: 30px;
+}
+.mainRow{
+    flex: 1;
+}
+.holst{
+    height: 470px;
+    background: #ececec;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.curOrder{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.85)
+}
+.listRoses{
+    background: #f6f6f6;
+    max-height: 200px;
+    overflow: visible;
+    display: flex;
+}
+.rose__stem{
+    width:40px;
+    height: 267px;
+    background: url(/source/img/flowers/stem.png) no-repeat center;
+    position: relative;
+    z-index: 1;
+}
+.rose__buton{
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    left: -55px;
+    top: 0px;
+    z-index: 2;
+}
+.rose__buton[color=red]{
+    background: url(/source/img/flowers/roza-red.png) no-repeat center;
+}
+.rose__buton[color=white]{
+    background: url(/source/img/flowers/roza-white.png) no-repeat center;
+}
+.rose{
+    position: relative;
+    padding-top: 75px;
+    margin: 0 55px;
+    cursor: pointer;
+}
+.rose .sticker {
+    position: absolute;
+    z-index: 3;
+    top: 25px;
+    left: 0px;
+    width: 65px;
+    height: 65px;
+}
+.sticker{
+    width: 95px;
+    height: 95px;
+    background-size: contain;
+    cursor: pointer;
+}
+/*.sticker[myid='1']{
+   background-image: url(/source/img/stickers/1.png); 
+}*/
+
+.propersMain{
+    height: 460px;
+}
+.decoration__controll{
+    display: flex;
+}
+.decoration__controll-item{
+   flex: 1;
+   padding: 5px;
+   cursor: pointer;
+   background: #ececec;
+   text-align: center;
+}
+.decoration__controll-item.check{
+   background: #c9c9c9;
+}
+.decoration__box-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.decoration__box{
+    max-height: 200px;
+    display: none;
+}
+.decoration__box.check{
+    display: block;
+}
+.decoration__box-list .sticker{
+    margin: 0px;
+}
+.filter-box{
+    padding: 5px;
+    background: #e5e5e5;
+}
+.bouquet-set{
+   
+}
+.rose-propers{
+    margin-bottom: 100px;
+}
+.holst .rose{
+    position: absolute;
+    z-index: 1;
+}
+.holst .rose.check .rose__buton {
+    box-shadow: 0px 0px 4px 1px rgba(255, 255, 0, 0.37);
+    border-radius: 100%;
+    background-color: rgba(255, 255, 0, 0.37);
+}
+.coolbutton {
+    display: inline-block;
+    background: #87bc87;
+    padding: 4px 10px;
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.listRoses .rose__stem {
+    height: 120px;
+}
+.hols-text {
+    padding: 5px 10px;
+    margin: 5px;
+    background: #fff;
+    position: relative;
+    z-index: 4;
+}
+.itog b:after {
+    content: " руб.";
+    font-weight: normal;
+}
+.order-box {
+    margin-top: 20px;
+}
+.order__but {
+    padding: 5px 10px 7px;
+    border-radius: 3px;
+    background: radial-gradient(ellipse at center, #ffa84c 0%,#ff7b0d 100%);
+    color: #fff;
+    cursor: pointer;
+}
